@@ -1,5 +1,5 @@
 var video;
-var initial = true;
+// var initial = true;
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
@@ -15,12 +15,12 @@ document.querySelector("#play").addEventListener("click", function() {
 	video = document.querySelector("#player1");
 	video.playbackRate = 1;
 	video.muted = false;
-	if (initial) {
-		initial = false;
-		let volume = video.volume;
-		volume = volume * 100;
-		document.querySelector("#volume").innerHTML = volume + "%";
-	}
+	// if (initial) {
+	// 	initial = false;
+	// 	let volume = video.volume;
+	// 	volume = volume * 100;
+	// 	document.querySelector("#volume").innerHTML = volume + "%";
+	// }
 	// let volume = video.volume;
 	// volume = volume * 100;
 	// document.querySelector("#volume").innerHTML = volume + "%";
@@ -81,7 +81,6 @@ document.querySelector("#slider").addEventListener("input", function(event) {
 	document.querySelector("#volume").innerHTML = cur_volume.toString() + "%";
 	console.log("Current volume: " + cur_volume + "%");
 	cur_volume = cur_volume / 100;
-	console.log("Current value: " + cur_volume);
 	video.volume = cur_volume;
 });
 
