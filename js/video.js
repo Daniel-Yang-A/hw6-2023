@@ -1,12 +1,12 @@
 var video;
-// var initial = true;
+var initial = true;
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
 	video = document.querySelector("#player1")
 	video.autoplay = false;
 	video.loop = false;
-	document.querySelector("#volume").innerHTML = "100%";
+	// document.querySelector("#volume").innerHTML = "100%";
 	console.log("auto play is set to: " + video.autoplay);
 	console.log("auto loop is set to: " + video.loop);
 });
@@ -15,12 +15,12 @@ document.querySelector("#play").addEventListener("click", function() {
 	video = document.querySelector("#player1");
 	video.playbackRate = 1;
 	video.muted = false;
-	// if (initial) {
-	// 	initial = false;
-	// 	let volume = video.volume;
-	// 	volume = volume * 100;
-	// 	document.querySelector("#volume").innerHTML = volume + "%";
-	// }
+	if (initial) {
+		initial = false;
+		let volume = video.volume;
+		volume = volume * 100;
+		document.querySelector("#volume").innerHTML = volume + "%";
+	}
 	// let volume = video.volume;
 	// volume = volume * 100;
 	// document.querySelector("#volume").innerHTML = volume + "%";
