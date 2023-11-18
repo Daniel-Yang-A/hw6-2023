@@ -13,9 +13,9 @@ document.querySelector("#play").addEventListener("click", function() {
 	video = document.querySelector("#player1");
 	video.playbackRate = 1;
 	video.muted = false;
-	let volume = video.volume;
-	volume = volume * 100;
-	document.querySelector("#volume").innerHTML = volume * 100;
+	// let volume = video.volume;
+	// volume = volume * 100;
+	// document.querySelector("#volume").innerHTML = volume + "%";
 	video.play();
 	console.log("Video starts playing");
 });
