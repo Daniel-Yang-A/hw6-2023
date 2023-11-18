@@ -9,13 +9,13 @@ window.addEventListener("load", function() {
 	console.log("auto loop is set to: " + video.loop);
 });
 
-// 没做完
 document.querySelector("#play").addEventListener("click", function() {
 	video = document.querySelector("#player1");
 	video.playbackRate = 1;
 	video.muted = false;
-	video.volume = 1;
-	document.querySelector("#volume").innerHTML = "100%";
+	let volume = video.volume;
+	volume = volume * 100;
+	document.querySelector("#volume").innerHTML = volume * 100;
 	video.play();
 	console.log("Video starts playing");
 });
@@ -72,7 +72,7 @@ document.querySelector("#slider").addEventListener("input", function(event) {
 	video = document.querySelector("#player1");
 	let cur_volume = event.target.value;
 	document.querySelector("#volume").innerHTML = cur_volume + "%";
-	console.log("Current volume: " + cur_volume + " %");
+	console.log("Current volume: " + cur_volume + "%");
 	cur_volume = cur_volume / 100;
 	video.volume = cur_volume;
 });
