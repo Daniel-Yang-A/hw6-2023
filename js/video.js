@@ -1,4 +1,5 @@
 var video;
+var initial = true;
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
@@ -14,6 +15,12 @@ document.querySelector("#play").addEventListener("click", function() {
 	video = document.querySelector("#player1");
 	video.playbackRate = 1;
 	video.muted = false;
+	if (initial) {
+		initial = false;
+		let volume = video.volume;
+		volume = volume * 100;
+		document.querySelector("#volume").innerHTML = volume + "%";
+	}
 	// let volume = video.volume;
 	// volume = volume * 100;
 	// document.querySelector("#volume").innerHTML = volume + "%";
