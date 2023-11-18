@@ -5,6 +5,7 @@ window.addEventListener("load", function() {
 	video = document.querySelector("#player1")
 	video.autoplay = false;
 	video.loop = false;
+	document.querySelector("#volume").innerHTML = "100%";
 	console.log("auto play is set to: " + video.autoplay);
 	console.log("auto loop is set to: " + video.loop);
 });
@@ -52,7 +53,6 @@ document.querySelector("#skip").addEventListener("click", function() {
 	}
 	video.currentTime = cur_time;
 	console.log("Current time: " + cur_time);
-	// console.log("Duration: " + duration);
 });
 
 document.querySelector("#mute").addEventListener("click", function() {
@@ -71,9 +71,10 @@ document.querySelector("#mute").addEventListener("click", function() {
 document.querySelector("#slider").addEventListener("input", function(event) {
 	video = document.querySelector("#player1");
 	let cur_volume = event.target.value;
-	document.querySelector("#volume").innerHTML = cur_volume + "%";
+	document.querySelector("#volume").innerHTML = cur_volume.toString() + "%";
 	console.log("Current volume: " + cur_volume + "%");
 	cur_volume = cur_volume / 100;
+	console.log("Current value: " + cur_volume);
 	video.volume = cur_volume;
 });
 
